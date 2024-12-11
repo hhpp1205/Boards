@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Board</title>
+</head>
+<body>
+<h1>Update Board</h1>
+<form th:action="@{'/boards/update/' + ${board.boardId}}" method="post">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" th:value="${board.title}" required><br>
+
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" th:text="${board.content}" required></textarea><br>
+
+    <button type="submit">Update</button>
+</form>
+<a href="/boards/list">Back to List</a>
+</body>
+</html>

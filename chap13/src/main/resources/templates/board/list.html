@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Board List</title>
+</head>
+<body>
+<h1>Board List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Writer</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="board : ${list}">
+        <td th:text="${board.boardId}"></td>
+        <td th:text="${board.title}"></td>
+        <td th:text="${board.writer.name}"></td>
+        <td>
+            <a th:href="@{'/boards/detail/' + ${board.boardId}}">Detail</a>
+            <a th:href="@{'/boards/update/' + ${board.boardId}}">Update</a>
+            <a th:href="@{'/boards/delete/' + ${board.boardId}}">Delete</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/boards/save">New Board</a>
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Member Details</title>
+</head>
+<body>
+<h1>Member Details</h1>
+<p><strong>Email:</strong> <span th:text="${member.email}"></span></p>
+<p><strong>Name:</strong> <span th:text="${member.name}"></span></p>
+<a th:href="@{/members/list}">Back to List</a>
+<a th:href="@{/members/update/{email}(email=${member.email})}">Edit</a>
+</body>
+</html>
